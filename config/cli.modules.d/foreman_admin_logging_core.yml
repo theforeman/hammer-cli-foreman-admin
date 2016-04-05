@@ -1,0 +1,111 @@
+:admin:
+  :logging:
+    :component:
+      -
+        :name: postgresql
+        :friendly_name: PostgreSQL
+        :file: /var/lib/pgsql/data/postgresql.conf
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ["client_min_messages", "=", "debug2"]
+          -
+            :action: ensure_line_is_present
+            :line: ["log_min_messages", "=", "debug2"]
+          -
+            :action: ensure_line_is_present
+            :line: ["log_min_error_statement", "=", "debug2"]
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ["client_min_messages", "=", "notice"]
+          -
+            :action: ensure_line_is_present
+            :line: ["log_min_messages", "=", "warning"]
+          -
+            :action: ensure_line_is_present
+            :line: ["log_min_error_statement", "=", "error"]
+      -
+        :name: rails
+        :friendly_name: Rails WebUI
+        :file: /etc/foreman/settings.yaml
+        :services: ["apache2", "httpd"]
+        :debug:
+          -
+            :action: run_command_on_file
+            :command: "sed -i 's/:level:.*/:level: debug/'"
+        :production:
+          -
+            :action: run_command_on_file
+            :command: "sed -i 's/:level:.*/:level: info/'"
+      -
+        :name: proxy
+        :friendly_name: Foreman Proxy
+        :file: /etc/foreman-proxy/settings.yml
+        :services: ["foreman-proxy"]
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: [":log_level", ": ", "DEBUG"]
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: [":log_level", ": ", "ERROR"]
+      -
+        :name: puppet
+        :friendly_name: Foreman Proxy
+        :file: /etc/puppet/puppet.conf
+        :services: ["apache2", "httpd"]
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ["log_level", "=", "debug"]
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ["log_level", "=", "notice"]
+      -
+        :name: dhcpd
+        :friendly_name: ISC DHCP
+        :file: /etc/dhcp/dhcpd.conf
+        :services: ["apache2", "httpd"]
+        :debug:
+          -
+            :action: create_file
+            :file: "/etc/rsyslog.d/dhcpd-debug.conf"
+            :contents: 'local6.* /var/log/dhcpd-debug.log'
+          -
+            :action: ensure_line_is_present
+            :line: ["log-facility", " ", "local6;"]
+        :production:
+          -
+            :action: remove_file
+            :file: "/etc/rsyslog.d/dhcpd-debug.conf"
+          -
+            :action: ensure_line_is_present
+            :line: ["log-facility", " ", "local6;"]
+      -
+        :name: named
+        :friendly_name: ISC DNS
+        :file: /etc/named.conf
+        :debug:
+          -
+            :action: run_command
+            :command: "rndc querylog on"
+        :production:
+          -
+            :action: run_command
+            :command: "rndc querylog off"
+      -
+        :name: tftp
+        :friendly_name: ISC TFTP
+        :file: /etc/xinetd.d/tftp
+        :services: ["xinetd"]
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ["server_args", "=", "-vvvv -s /var/lib/tftpboot -m /etc/tftpd.map"]
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ["server_args", "=", "-v -s /var/lib/tftpboot -m /etc/tftpd.map"]

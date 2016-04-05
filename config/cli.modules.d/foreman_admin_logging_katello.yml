@@ -1,0 +1,72 @@
+:admin:
+  :logging:
+    :component:
+      -
+        :name: mongod
+        :friendly_name: MondoDB
+        :file: /etc/mongod.conf
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ["systemLog.verbosity", "=", "3"]
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ["systemLog.verbosity", "=", "0"]
+      -
+        :name: qpidd
+        :friendly_name: QPID broker
+        :file: /etc/qpid/qpidd.conf
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ["log-enable", "=", "info+"]
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ["log-enable", "=", "error+"]
+      -
+        :name: tomcat
+        :friendly_name: Candlepin
+        :file: /etc/candlepin/candlepin.conf
+        :services: ["tomcat6", "tomcat"]
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ["log4j.logger.org.candlepin.servlet.filter", "=", "DEBUG"]
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ["log4j.logger.org.candlepin.servlet.filter", "=", "WARN"]
+      -
+        :name: pulp
+        :friendly_name: Pulp
+        :file: /etc/pulp/server.conf
+        :services: ["pulp_workers", "pulp_celerybeat", "pulp_resource_manager"]
+        :debug:
+          -
+            :action: create_file
+            :file: "/etc/rsyslog.d/pulp-debug.conf"
+            :contents: ':programname, startswith, "pulp" -/var/log/pulp-debug.log'
+          -
+            :action: ensure_line_is_present
+            :line: ["log_level", ": ", "DEBUG"]
+        :production:
+          -
+            :action: remove_file
+            :file: "/etc/rsyslog.d/pulp-debug.conf"
+          -
+            :action: ensure_line_is_present
+            :line: ["log_level", ": ", "INFO"]
+      -
+        :name: virt-who
+        :friendly_name: Virt-who utility
+        :file: /etc/sysconfig/virt-who
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ["VIRTWHO_DEBUG", "=", "1"]
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ["VIRTWHO_DEBUG", "=", "0"]

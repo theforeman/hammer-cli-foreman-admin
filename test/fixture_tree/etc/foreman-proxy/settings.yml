@@ -1,0 +1,60 @@
+---
+### File managed with puppet ###
+## Module:           'foreman_proxy'
+
+:settings_directory: /etc/foreman-proxy/settings.d
+
+# SSL Setup
+
+# if enabled, all communication would be verified via SSL
+# NOTE that both certificates need to be signed by the same CA in order for this to work
+# see http://theforeman.org/projects/smart-proxy/wiki/SSL for more information
+:ssl_ca_file: /etc/foreman-proxy/ssl_ca.pem
+:ssl_certificate: /etc/foreman-proxy/ssl_cert.pem
+:ssl_private_key: /etc/foreman-proxy/ssl_key.pem
+
+# the hosts which the proxy accepts connections from
+# commenting the following lines would mean every verified SSL connection allowed
+:trusted_hosts:
+  - dell-pe6950-01.rhts.eng.bos.redhat.com
+
+# Endpoint for reverse communication
+:foreman_url: https://dell-pe6950-01.rhts.eng.bos.redhat.com
+
+# SSL settings for client authentication against Foreman. If undefined, the values
+# from general SSL options are used instead. Mainly useful when Foreman uses
+# different certificates for its web UI and for smart-proxy requests.
+:foreman_ssl_ca: /etc/foreman-proxy/foreman_ssl_ca.pem
+:foreman_ssl_cert: /etc/foreman-proxy/foreman_ssl_cert.pem
+:foreman_ssl_key: /etc/foreman-proxy/foreman_ssl_key.pem
+
+# by default smart_proxy runs in the foreground. To enable running as a daemon, uncomment 'daemon' setting
+:daemon: true
+# Only used when 'daemon' is set to true.
+# Uncomment and modify if you want to change the default pid file '/var/run/foreman-proxy/foreman-proxy.pid'
+#:daemon_pid: /var/run/foreman-proxy/foreman-proxy.pid
+
+# host and ports configuration
+# Host or IPs to bind on (e.g. *, localhost, 0.0.0.0, ::, 192.168.1.20)
+:bind_host: '*'
+# http is disabled by default. To enable, uncomment 'http_port' setting
+# https is enabled if certificate, CA certificate, and private key are present in locations specifed by
+# ssl_certificate, ssl_ca_file, and ssl_private_key correspondingly
+# default values for https_port is 8443
+:https_port: 9090
+:http_port: 8000
+
+# shared options for virsh DNS/DHCP provider
+:virsh_network: default
+
+# Log configuration
+# Uncomment and modify if you want to change the location of the log file or use STDOUT or SYSLOG values
+:log_file: /var/log/foreman-proxy/proxy.log
+# Uncomment and modify if you want to change the log level
+# WARN, DEBUG, ERROR, FATAL, INFO, UNKNOWN
+:log_level: ERROR
+
+# Log buffer size and extra buffer size (for errors). Defaults to 3000 messages in total,
+# which is about 500 kB request.
+:log_buffer: 2000
+:log_buffer_errors: 1000
