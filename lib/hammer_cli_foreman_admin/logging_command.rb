@@ -75,14 +75,14 @@ module HammerCLIForemanAdmin
       name = component[:name]
       friendly_name = component[:friendly_name]
       file = component[:file]
-      file = option_prefix + file unless option_prefix.empty?
+      file = option_prefix + file if option_prefix
       backup_suffix = Time.now.utc.to_i.to_s(36)
       if File.exists?(file)
         component[level].each do |action|
           action_name = action[:action]
           action[:name] = name
           if action[:file]
-            action[:file] = option_prefix + action[:file] unless option_prefix.empty?
+            action[:file] = option_prefix + action[:file] if option_prefix
           else
             action[:file] = file
           end
@@ -111,6 +111,9 @@ module HammerCLIForemanAdmin
     end
 
     def execute
+      # FIXME Workaround until https://github.com/theforeman/hammer-cli/pull/192/files
+      HammerCLI::Settings.load_from_paths([File.expand_path('../../../config', __FILE__)]) unless HammerCLI::Settings.get(:admin)
+
       configuration = HammerCLI::Settings.get(:admin)[:logging][:component] rescue raise("Missing logging YAML definitions (foreman_admin_logging_*.yml)")
       if option_list?
         output_definition = HammerCLI::Output::Definition.new

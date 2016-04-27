@@ -3,6 +3,7 @@ Gemfile.lock
 Gemfile.local
 pkg
 .bundle
+*.gem
 
 # RubyMine
 .idea

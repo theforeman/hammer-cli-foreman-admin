@@ -1,3 +1,8 @@
+#
+# Logging definitions
+#
+# To modify this file, make a copy in /etc/cli.modules.d/
+#
 :admin:
   :logging:
     :component:
