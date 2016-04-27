@@ -1,0 +1,19 @@
+# This file is being maintained by Puppet.
+# DO NOT EDIT
+
+service tftp
+{
+        port            = 69
+        disable         = no
+        socket_type     = dgram
+        protocol        = udp
+        wait            = yes
+        user            = root
+        group           = root
+        groups          = yes
+        server          = /usr/sbin/in.tftpd
+        server_args     = -v -s /var/lib/tftpboot -m /etc/tftpd.map
+        per_source      = 11
+        cps             = 100 2
+        flags           = IPv4
+}

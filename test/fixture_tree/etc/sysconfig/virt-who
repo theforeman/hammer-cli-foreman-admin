@@ -1,0 +1,76 @@
+# Enviromental variables for virt-who service can be specified here.
+#
+# These enviromental variables are only used when starting virt-who as service,
+# otherwise you must specify them manually.
+#
+# Note that if some value contains special character, it must be escapted
+# or the value must be quoted - for example ampersand in the password.
+
+# Enable debugging output.
+VIRTWHO_DEBUG=0
+
+# Send the list of guest IDs and exit immediately.
+#VIRTWHO_ONE_SHOT=0
+
+# Acquire and send list of virtual guest each N seconds, 0 means default
+# configuration.
+#VIRTWHO_INTERVAL=0
+
+# Virt-who subscription manager backend. Enable only one option from the following:
+# Report to Subscription Asset Manager (SAM) or the Red Hat Customer Portal
+# VIRTWHO_SAM=1
+# Report to Sattellite version 6
+# VIRTWHO_SATELLITE6=0
+# Report to Satellite verision 5
+# VIRTWHO_SATELLITE5=0
+# Report to Satellite [Legacy]
+# VIRTWHO_SATELLITE=0
+
+
+# Following configuration is now deprecated. Please use configuration file
+# in /etc/virt-who.d/. See virt-who-config(5) for details how to configure it.
+
+# virt-who mode, enable only one option from following 5:
+# Use libvirt to list virtual guests [default]
+#VIRTWHO_LIBVIRT=1
+# Use vdsm to list virtual guests
+#VIRTWHO_VDSM=0
+# Register ESX machines using vCenter
+#VIRTWHO_ESX=0
+# Register guests using RHEV-M
+#VIRTWHO_RHEVM=0
+# Register guest using Hyper-V
+#VIRTWHO_HYPERV=0
+
+# Options for Libvirt mode
+#VIRTWHO_LIBVIRT_OWNER=
+#VIRTWHO_LIBVIRT_ENV=
+#VIRTWHO_LIBVIRT_SERVER=
+#VIRTWHO_LIBVIRT_USERNAME=
+#VIRTWHO_LIBVIRT_PASSWORD=
+
+# Options for ESX mode
+#VIRTWHO_ESX_OWNER=
+#VIRTWHO_ESX_ENV=
+#VIRTWHO_ESX_SERVER=
+#VIRTWHO_ESX_USERNAME=
+#VIRTWHO_ESX_PASSWORD=
+
+# Options for RHEV-M mode
+#VIRTWHO_RHEVM_OWNER=
+#VIRTWHO_RHEVM_ENV=
+#VIRTWHO_RHEVM_SERVER=
+#VIRTWHO_RHEVM_USERNAME=
+#VIRTWHO_RHEVM_PASSWORD=
+
+# Options for HYPER-V mode
+#VIRTWHO_HYPERV_OWNER=
+#VIRTWHO_HYPERV_ENV=
+#VIRTWHO_HYPERV_SERVER=
+#VIRTWHO_HYPERV_USERNAME=
+#VIRTWHO_HYPERV_PASSWORD=
+
+# Options for Satellite 5 backend
+#VIRTWHO_SATELLITE_SERVER=
+#VIRTWHO_SATELLITE_USERNAME=
+#VIRTWHO_SATELLITE_PASSWORD=

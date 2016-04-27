@@ -1,0 +1,30 @@
+---
+### File managed with puppet ###
+## Module:           'foreman'
+
+
+:unattended: true
+:login: true
+:require_ssl: true
+:locations_enabled: true
+:organizations_enabled: true
+:puppetrun: false
+
+# The following values are used for providing default settings during db migrate
+:oauth_active: true
+:oauth_map_users: false
+:oauth_consumer_key: NoEYMQjaH5NLEKF79t85k7PdFACShyJN
+:oauth_consumer_secret: uLvQ9jByW5E9fj9oivwhrdTHhbDygqWr
+
+# Websockets
+:websockets_encrypt: on
+:websockets_ssl_key: /etc/pki/katello/private/katello-apache.key
+:websockets_ssl_cert: /etc/pki/katello/certs/katello-apache.crt
+
+# Log settings for the current environment can be adjusted by adding them
+# here. For example, if you want to increase the log level.
+:logging:
+  :level: info
+
+# Individual logging types can be toggled on/off here
+:loggers:
