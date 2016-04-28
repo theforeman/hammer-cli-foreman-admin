@@ -117,8 +117,9 @@ module HammerCLIForemanAdmin
       configuration = HammerCLI::Settings.get(:admin)[:logging][:component] rescue raise("Missing logging YAML definitions (foreman_admin_logging_*.yml)")
       if option_list?
         output_definition = HammerCLI::Output::Definition.new
-        output_definition.fields << Fields::Field.new(:label => _('Component name'), :path => ["name"])
+        output_definition.fields << Fields::Field.new(:label => _('Component'), :path => ["name"])
         output_definition.fields << Fields::Field.new(:label => _('Auto-detected by existence of'), :path => ["file"])
+        output_definition.fields << Fields::Field.new(:label => _('Destinations'), :path => ["destinations"])
         output = HammerCLI::Output::Output.new(context, :default_adapter => :table)
         output.print_collection(output_definition, HammerCLI::Settings.get(:admin)[:logging][:component])
       else

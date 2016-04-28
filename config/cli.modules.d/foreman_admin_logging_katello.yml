@@ -10,6 +10,7 @@
         :name: mongod
         :friendly_name: MondoDB
         :file: /etc/mongod.conf
+        :destinations: "syslog"
         :debug:
           -
             :action: ensure_line_is_present
@@ -22,6 +23,7 @@
         :name: qpidd
         :friendly_name: QPID broker
         :file: /etc/qpid/qpidd.conf
+        :destinations: "syslog"
         :debug:
           -
             :action: ensure_line_is_present
@@ -34,6 +36,7 @@
         :name: tomcat
         :friendly_name: Candlepin
         :file: /etc/candlepin/candlepin.conf
+        :destinations: "/var/log/candlepin/ /var/log/tomcat/"
         :services: ["tomcat6", "tomcat"]
         :debug:
           -
@@ -47,6 +50,7 @@
         :name: pulp
         :friendly_name: Pulp
         :file: /etc/pulp/server.conf
+        :destinations: "syslog /var/log/pulp-debug.log"
         :services: ["pulp_workers", "pulp_celerybeat", "pulp_resource_manager"]
         :debug:
           -
@@ -67,6 +71,7 @@
         :name: virt-who
         :friendly_name: Virt-who utility
         :file: /etc/sysconfig/virt-who
+        :destinations: "syslog"
         :debug:
           -
             :action: ensure_line_is_present

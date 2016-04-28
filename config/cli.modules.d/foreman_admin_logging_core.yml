@@ -10,6 +10,7 @@
         :name: postgresql
         :friendly_name: PostgreSQL
         :file: /var/lib/pgsql/data/postgresql.conf
+        :destinations: "syslog /var/lib/pgsql/data/pg_log/"
         :debug:
           -
             :action: ensure_line_is_present
@@ -34,6 +35,7 @@
         :name: rails
         :friendly_name: Rails WebUI
         :file: /etc/foreman/settings.yaml
+        :destinations: "/var/log/foreman/production.log"
         :services: ["apache2", "httpd"]
         :debug:
           -
@@ -47,6 +49,7 @@
         :name: proxy
         :friendly_name: Foreman Proxy
         :file: /etc/foreman-proxy/settings.yml
+        :destinations: "/var/log/foreman-proxy/proxy.log"
         :services: ["foreman-proxy"]
         :debug:
           -
@@ -60,6 +63,7 @@
         :name: puppet
         :friendly_name: Foreman Proxy
         :file: /etc/puppet/puppet.conf
+        :destinations: "/var/log/puppet/masterhttp.log"
         :services: ["apache2", "httpd"]
         :debug:
           -
@@ -73,6 +77,7 @@
         :name: dhcpd
         :friendly_name: ISC DHCP
         :file: /etc/dhcp/dhcpd.conf
+        :destinations: "syslog /var/log/dhcpd-debug.log"
         :services: ["apache2", "httpd"]
         :debug:
           -
@@ -93,6 +98,7 @@
         :name: named
         :friendly_name: ISC DNS
         :file: /etc/named.conf
+        :destinations: "syslog"
         :debug:
           -
             :action: run_command
@@ -105,6 +111,7 @@
         :name: tftp
         :friendly_name: ISC TFTP
         :file: /etc/xinetd.d/tftp
+        :destinations: "syslog"
         :services: ["xinetd"]
         :debug:
           -
