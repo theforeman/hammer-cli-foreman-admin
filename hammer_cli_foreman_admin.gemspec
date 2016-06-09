@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Foreman administrative commands plugin}
   s.description = %q{Foreman administrative commands plugin for Hammer CLI}
 
-  s.files = Dir['lib/**/*.rb'] + Dir['config/**/*.yml']
+  s.files = Dir["{config,lib}/**/*"] + Dir["locale/**/*.{po,pot,mo}"]
   s.extra_rdoc_files = [
     "LICENSE",
     "README.md"

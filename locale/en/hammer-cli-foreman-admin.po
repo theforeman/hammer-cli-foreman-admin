@@ -41,5 +41,20 @@ msgstr ""
 msgid "Skip configuration backups creation."
 msgstr ""
 
+msgid "Operate on prefixed environment (e.g. chroot)."
+msgstr ""
+
+msgid "Command '%{cmd}' failed: %{e}"
+msgstr ""
+
+msgid "Component"
+msgstr ""
+
+msgid "Auto-detected by existence of"
+msgstr ""
+
+msgid "Destinations"
+msgstr ""
+
 msgid "Logging verbosity level setup"
 msgstr ""
