@@ -7,19 +7,6 @@
   :logging:
     :component:
       -
-        :name: mongod
-        :friendly_name: MondoDB
-        :file: /etc/mongod.conf
-        :destinations: "syslog"
-        :debug:
-          -
-            :action: ensure_line_is_present
-            :line: ["systemLog.verbosity", "=", "3"]
-        :production:
-          -
-            :action: ensure_line_is_present
-            :line: ["systemLog.verbosity", "=", "0"]
-      -
         :name: qpidd
         :friendly_name: QPID broker
         :file: /etc/qpid/qpidd.conf
