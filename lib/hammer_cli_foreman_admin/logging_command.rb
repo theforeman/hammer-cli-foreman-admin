@@ -78,6 +78,11 @@ module HammerCLIForemanAdmin
       file = option_prefix + file if option_prefix
       backup_suffix = Time.now.utc.to_i.to_s(36)
       if File.exists?(file)
+        unless option_no_backup? || option_dry_run?
+          backup_file = "#{file}.#{backup_suffix}~"
+          logger.info "Creating backup #{backup_file}"
+          FileUtils.cp(file, backup_file)
+        end
         component[level].each do |action|
           action_name = action[:action]
           action[:name] = name
@@ -87,16 +92,9 @@ module HammerCLIForemanAdmin
             action[:file] = file
           end
           func = action_functions[action_name.to_sym]
-          if func
+          if func && ! option_dry_run?
             logger.info "Processing #{name} action #{action_name}"
-            unless option_dry_run?
-              unless option_no_backup?
-                backup_file = "#{file}.#{backup_suffix}~"
-                logger.info "Creating backup #{backup_file}"
-                FileUtils.cp(file, backup_file)
-              end
-              func.call(action)
-            end
+            func.call(action)
           else
             raise "Unknown action #{action_name} for component #{name}"
           end
@@ -126,7 +124,7 @@ module HammerCLIForemanAdmin
         if option_all?
           components = configuration
         else
-          raise("Unknown component provided, use --list to find them") unless option_components.all? { |c| available_components.include? c }
+          raise("Unknown component provided, use --list to find them") unless option_components.all? { |c| available_components.map{|x| x[:name]}.include? c }
           components = configuration.select{ |x| option_components.include? x[:name] }
         end
         components.each { |component| configure_component(component, new_level) }
