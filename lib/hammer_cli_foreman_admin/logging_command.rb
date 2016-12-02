@@ -61,7 +61,11 @@ module HammerCLIForemanAdmin
           if File.foreach(opts[:file]).grep(/#{opts[:line][0]}/).empty?
             open(opts[:file], 'a') { |f| f.puts "\n" + opts[:line].join }
           else
-            run_command %Q|sed -i 's!#*#{opts[:line][0]}\s*#{opts[:line][1]}.*!#{opts[:line].join}!' #{opts[:file]}|
+            left = opts[:line][0]
+            mid = opts[:line][1]
+            right = opts[:line][2]
+            content = File.read(opts[:file]).gsub(/#*#{left}\s*#{mid}\s*.*$/, opts[:line].join(' '))
+            open(opts[:file], "w") { |file| file << content }
           end
         end
       }
