@@ -63,8 +63,8 @@ module HammerCLIForemanAdmin
           else
             left = opts[:line][0]
             mid = opts[:line][1]
-            right = opts[:line][2]
-            content = File.read(opts[:file]).gsub(/#*#{left}\s*#{mid}\s*.*$/, opts[:line].join(' '))
+            join_with = opts[:join_with] || ' '
+            content = File.read(opts[:file]).gsub(/#* ?#{left}\s*#{mid}\s*.*$/, opts[:line].join(join_with))
             open(opts[:file], "w") { |file| file << content }
           end
         end

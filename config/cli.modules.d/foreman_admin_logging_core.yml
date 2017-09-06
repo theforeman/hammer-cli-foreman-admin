@@ -55,10 +55,12 @@
           -
             :action: ensure_line_is_present
             :line: [":log_level", ": ", "DEBUG"]
+            :join_with: ''
         :production:
           -
             :action: ensure_line_is_present
             :line: [":log_level", ": ", "ERROR"]
+            :join_with: ''
       -
         :name: puppet
         :friendly_name: Foreman Proxy
@@ -87,6 +89,7 @@
           -
             :action: ensure_line_is_present
             :line: ["log-facility", " ", "local6;"]
+            :join_with: ''
         :production:
           -
             :action: remove_file

@@ -15,10 +15,12 @@
           -
             :action: ensure_line_is_present
             :line: ["log-enable", "=", "info+"]
+            :join_with: ''
         :production:
           -
             :action: ensure_line_is_present
             :line: ["log-enable", "=", "error+"]
+            :join_with: ''
       -
         :name: tomcat
         :friendly_name: Candlepin
@@ -47,6 +49,7 @@
           -
             :action: ensure_line_is_present
             :line: ["log_level", ": ", "DEBUG"]
+            :join_with: ''
         :production:
           -
             :action: remove_file
@@ -54,6 +57,7 @@
           -
             :action: ensure_line_is_present
             :line: ["log_level", ": ", "INFO"]
+            :join_with: ''
       -
         :name: virt-who
         :friendly_name: Virt-who utility
@@ -63,7 +67,9 @@
           -
             :action: ensure_line_is_present
             :line: ["VIRTWHO_DEBUG", "=", "1"]
+            :join_with: ''
         :production:
           -
             :action: ensure_line_is_present
             :line: ["VIRTWHO_DEBUG", "=", "0"]
+            :join_with: ''
