@@ -52,3 +52,10 @@ Currently recognized components (files):
 
 The tool uses search and replace approach declared in YAML configuration files
 `foreman_admin_logging_core.yml` and `foreman_admin_logging_katello.yml`.
+
+### Development
+
+To test the logging subcommand, use the fixture examples and compare with git
+diff:
+
+    hammer -d admin logging --prefix test/fixture_tree/ --no-backup -a -d
