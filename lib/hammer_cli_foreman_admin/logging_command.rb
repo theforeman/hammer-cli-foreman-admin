@@ -96,9 +96,9 @@ module HammerCLIForemanAdmin
             action[:file] = file
           end
           func = action_functions[action_name.to_sym]
-          if func && ! option_dry_run?
+          if func
             logger.info "Processing #{name} action #{action_name}"
-            func.call(action)
+            func.call(action) unless option_dry_run?
           else
             raise "Unknown action #{action_name} for component #{name}"
           end
