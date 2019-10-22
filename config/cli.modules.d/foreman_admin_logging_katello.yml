@@ -30,11 +30,11 @@
         :debug:
           -
             :action: ensure_line_is_present
-            :line: ["log4j.logger.org.candlepin.servlet.filter", "=", "DEBUG"]
+            :line: ["log4j.logger.org.candlepin", "=", "DEBUG"]
         :production:
           -
             :action: ensure_line_is_present
-            :line: ["log4j.logger.org.candlepin.servlet.filter", "=", "WARN"]
+            :line: ["log4j.logger.org.candlepin", "=", "WARN"]
       -
         :name: pulp
         :friendly_name: Pulp

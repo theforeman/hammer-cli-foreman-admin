@@ -58,4 +58,5 @@ The tool uses search and replace approach declared in YAML configuration files
 To test the logging subcommand, use the fixture examples and compare with git
 diff:
 
-    hammer -d admin logging --prefix test/fixture_tree/ --no-backup -a -d
+    PWD=$(pwd)
+    hammer -d admin logging --prefix $PWD/test/fixture_tree/ --no-backup -a -d
