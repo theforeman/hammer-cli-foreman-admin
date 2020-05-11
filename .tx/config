@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[foreman.hammer_cli_foreman_admin]
+file_filter = locale/<lang>/hammer-cli-foreman-admin.po
+source_file = locale/hammer-cli-foreman-admin.pot
+source_lang = en
+type = PO
+
