@@ -63,7 +63,7 @@
             :join_with: ''
       -
         :name: puppet
-        :friendly_name: Foreman Proxy
+        :friendly_name: Puppet Master 2.x+
         :file: /etc/puppet/puppet.conf
         :destinations: "/var/log/puppet/masterhttp.log"
         :services: ["apache2", "httpd"]
@@ -75,6 +75,20 @@
           -
             :action: ensure_line_is_present
             :line: ["log_level", "=", "notice"]
+      -
+        :name: puppet5
+        :friendly_name: Puppet Master 5.x+
+        :file: /etc/puppetlabs/puppetserver/logback.xml
+        :destinations: "/var/log/puppetlabs/puppetserver/puppetserver.log"
+        :services: ["puppetserver"]
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ['<root level', '=', '"debug">']
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ['<root level', '=', '"info">']
       -
         :name: dhcpd
         :friendly_name: ISC DHCP
