@@ -138,3 +138,19 @@
           -
             :action: ensure_line_is_present
             :line: ["server_args", "=", "-v -s /var/lib/tftpboot -m /etc/tftpd.map"]
+      -
+        :name: redis
+        :friendly_name: Redis
+        :file: /etc/opt/rh/rh-redis5/redis.conf
+        :destinations: "/var/log/redis/redis.log"
+        :services: ["rh-redis5-redis"]
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ["loglevel", " ", "debug"]
+            :join_with: ''
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ["loglevel", " ", "notice"]
+            :join_with: ''
