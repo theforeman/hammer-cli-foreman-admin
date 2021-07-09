@@ -36,29 +36,6 @@
             :action: ensure_line_is_present
             :line: ["log4j.logger.org.candlepin", "=", "WARN"]
       -
-        :name: pulp
-        :friendly_name: Pulp
-        :file: /etc/pulp/server.conf
-        :destinations: "syslog /var/log/pulp-debug.log"
-        :services: ["pulp_workers", "pulp_celerybeat", "pulp_resource_manager"]
-        :debug:
-          -
-            :action: create_file
-            :file: "/etc/rsyslog.d/pulp-debug.conf"
-            :contents: ':programname, startswith, "pulp" -/var/log/pulp-debug.log'
-          -
-            :action: ensure_line_is_present
-            :line: ["log_level", ": ", "DEBUG"]
-            :join_with: ''
-        :production:
-          -
-            :action: remove_file
-            :file: "/etc/rsyslog.d/pulp-debug.conf"
-          -
-            :action: ensure_line_is_present
-            :line: ["log_level", ": ", "INFO"]
-            :join_with: ''
-      -
         :name: pulpcore
         :friendly_name: Pulpcore
         :file: /etc/pulp/settings.py
