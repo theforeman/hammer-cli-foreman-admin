@@ -59,6 +59,22 @@
             :line: ["log_level", ": ", "INFO"]
             :join_with: ''
       -
+        :name: pulpcore
+        :friendly_name: Pulpcore
+        :file: /etc/pulp/settings.py
+        :destinations: "syslog"
+        :services: ["pulpcore-content", "pulpcore-api", "pulpcore-workers@*"]
+        :debug:
+          -
+            :action: ensure_line_is_present
+            :line: ["            'level'", ": ", "'DEBUG',"]
+            :join_with: ''
+        :production:
+          -
+            :action: ensure_line_is_present
+            :line: ["            'level'", ": ", "'INFO',"]
+            :join_with: ''
+      -
         :name: virt-who
         :friendly_name: Virt-who utility
         :file: /etc/sysconfig/virt-who
