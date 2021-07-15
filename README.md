@@ -35,19 +35,19 @@ Currently recognized components (files):
 
 		# hammer admin logging --list
 		-----------|-------------------------------------|-------------------------------------
-		COMPONENT  | AUTO-DETECTED BY EXISTENCE OF       | DESTINATIONS                        
+		COMPONENT  | AUTO-DETECTED BY EXISTENCE OF       | DESTINATIONS
 		-----------|-------------------------------------|-------------------------------------
-		postgresql | /var/lib/pgsql/data/postgresql.conf | syslog /var/lib/pgsql/data/pg_log/  
-		rails      | /etc/foreman/settings.yaml          | /var/log/foreman/production.log     
-		proxy      | /etc/foreman-proxy/settings.yml     | /var/log/foreman-proxy/proxy.log    
-		puppet     | /etc/puppet/puppet.conf             | /var/log/puppet/masterhttp.log      
-		dhcpd      | /etc/dhcp/dhcpd.conf                | syslog /var/log/dhcpd-debug.log     
-		named      | /etc/named.conf                     | syslog                              
-		tftp       | /etc/xinetd.d/tftp                  | syslog                              
-		qpidd      | /etc/qpid/qpidd.conf                | syslog                              
+		postgresql | /var/lib/pgsql/data/postgresql.conf | syslog /var/lib/pgsql/data/pg_log
+		rails      | /etc/foreman/settings.yaml          | /var/log/foreman/production.log
+		proxy      | /etc/foreman-proxy/settings.yml     | /var/log/foreman-proxy/proxy.log
+		puppet     | /etc/puppet/puppet.conf             | /var/log/puppet/masterhttp.log
+		dhcpd      | /etc/dhcp/dhcpd.conf                | syslog /var/log/dhcpd-debug.log
+		named      | /etc/named.conf                     | syslog
+		tftp       | /etc/xinetd.d/tftp                  | syslog
+		qpidd      | /etc/qpid/qpidd.conf                | syslog
 		tomcat     | /etc/candlepin/candlepin.conf       | /var/log/candlepin/ /var/log/tomcat/
-		pulp       | /etc/pulp/server.conf               | syslog /var/log/pulp-debug.log      
-		virt-who   | /etc/sysconfig/virt-who             | syslog                              
+		pulp       | /etc/pulp/server.conf               | syslog /var/log/pulp-debug.log
+		virt-who   | /etc/sysconfig/virt-who             | syslog
 		-----------|-------------------------------------|-------------------------------------
 
 The tool uses search and replace approach declared in YAML configuration files
@@ -58,5 +58,4 @@ The tool uses search and replace approach declared in YAML configuration files
 To test the logging subcommand, use the fixture examples and compare with git
 diff:
 
-    PWD=$(pwd)
-    hammer -d admin logging --prefix $PWD/test/fixture_tree/ --no-backup -a -d
+    hammer -d admin logging --prefix $(pwd)/test/fixture_tree/ --no-backup -a -d
