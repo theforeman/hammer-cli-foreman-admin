@@ -40,7 +40,7 @@
         :friendly_name: Pulpcore
         :file: /etc/pulp/settings.py
         :destinations: "syslog"
-        :services: ["pulpcore-content", "pulpcore-api", "pulpcore-workers@*"]
+        :services: ["pulpcore-content", "pulpcore-api", "pulpcore-worker@*"]
         :debug:
           -
             :action: ensure_line_is_present
