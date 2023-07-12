@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-foreman-admin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-foreman-admin 1.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-09 08:38+0200\n"
+"PO-Revision-Date: 2016-08-26 06:50+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
+"Language-Team: Georgian (https://app.transifex.com/foreman/teams/114/ka/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Administrative server-side tasks"
+msgstr "სერვერის ადმინისტრაციული ამოცანები"
+
+msgid "Increase verbosity level to debug."
+msgstr "დიაგნოსტიკური შეტყობინებების გამართვის დონემდე მომატება ."
+
+msgid "Decrease verbosity level to standard."
+msgstr "დიაგნოსტიკური შეტყობინებების სტანდარტულამდე დაწევა."
+
+msgid "Components to apply, use --list to get them."
+msgstr "გადასატარებელი კომპონენტები. სიის მისაღებად გამოიყენეთ --list."
+
+msgid "List available components."
+msgstr "ხელმისაწვდომი კომპონენტების სია."
+
+msgid "Apply to all components."
+msgstr "ყველა კომპონენტზე გადატარება."
+
+msgid "Do not apply specified changes."
+msgstr "არ გადაატარო მითითებული ცვლილებები."
+
+msgid "Skip configuration backups creation."
+msgstr "კონფიგურაციის მარქაფის შექმნის გამოტოვება."
+
+msgid "Operate on prefixed environment (e.g. chroot)."
+msgstr "პრეფიქსიან გარემოში მუშაობა (მაგ. chroot)."
+
+msgid "Command '%{cmd}' failed: %{e}"
+msgstr "ბრძანებს '%{cmd}' შეცდომა: %{e}"
+
+msgid "Component"
+msgstr "კომპონენტი"
+
+msgid "Auto-detected by existence of"
+msgstr "ავტომატურად ნაპოვნია"
+
+msgid "Destinations"
+msgstr "სამზნეები"
+
+msgid "Logging verbosity level setup"
+msgstr "დიაგნოსტიკური შეტყობინებების დონის მორგება"

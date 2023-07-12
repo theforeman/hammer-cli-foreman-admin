@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-foreman-admin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Bryan Kearney <bryan.kearney@gmail.com>, 2018
+# Amit Upadhye <aupadhye@redhat.com>, 2022
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-foreman-admin 1.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-09 08:38+0200\n"
+"PO-Revision-Date: 2016-08-26 06:50+0000\n"
+"Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2022\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/foreman/"
+"teams/114/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
+
+msgid "Administrative server-side tasks"
+msgstr "Tarefas administrativas no servidor"
+
+msgid "Increase verbosity level to debug."
+msgstr "Aumentar nível de verbosidade para depuração."
+
+msgid "Decrease verbosity level to standard."
+msgstr "Diminuir nível de verbosidade para padrão."
+
+msgid "Components to apply, use --list to get them."
+msgstr "Componentes para aplicar, use --list para obtê-los."
+
+msgid "List available components."
+msgstr "Listar componentes disponíveis."
+
+msgid "Apply to all components."
+msgstr "Aplicar a todos os componentes."
+
+msgid "Do not apply specified changes."
+msgstr "Não aplicar alterações especificadas."
+
+msgid "Skip configuration backups creation."
+msgstr "Pular a criação de backups de criação."
+
+msgid "Operate on prefixed environment (e.g. chroot)."
+msgstr "Operar em ambiente pré-fixado (por exemplo, chroot)."
+
+msgid "Command '%{cmd}' failed: %{e}"
+msgstr "O comando '%{cmd}' falhou: %{e}"
+
+msgid "Component"
+msgstr "Componente"
+
+msgid "Auto-detected by existence of"
+msgstr "Detectado automaticamente pela existência de"
+
+msgid "Destinations"
+msgstr "Destinações"
+
+msgid "Logging verbosity level setup"
+msgstr "Fazendo log de configuração de nível de verbosidade"

@@ -3,58 +3,63 @@
 # This file is distributed under the same license as the hammer-cli-foreman-admin package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Andi Chandler <andi@gowling.com>, 2017
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman-admin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-09 08:38+0200\n"
-"PO-Revision-Date: 2016-06-09 08:38+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2016-08-26 06:50+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2017\n"
+"Language-Team: English (United Kingdom) (https://app.transifex.com/foreman/"
+"teams/114/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Administrative server-side tasks"
-msgstr ""
+msgstr "Administrative server-side tasks"
 
 msgid "Increase verbosity level to debug."
-msgstr ""
+msgstr "Increase verbosity level to debug."
 
 msgid "Decrease verbosity level to standard."
-msgstr ""
+msgstr "Decrease verbosity level to standard."
 
 msgid "Components to apply, use --list to get them."
-msgstr ""
+msgstr "Components to apply, use --list to get them."
 
 msgid "List available components."
-msgstr ""
+msgstr "List available components."
 
 msgid "Apply to all components."
-msgstr ""
+msgstr "Apply to all components."
 
 msgid "Do not apply specified changes."
-msgstr ""
+msgstr "Do not apply specified changes."
 
 msgid "Skip configuration backups creation."
-msgstr ""
+msgstr "Skip configuration backups creation."
 
 msgid "Operate on prefixed environment (e.g. chroot)."
-msgstr ""
+msgstr "Operate on prefixed environment (e.g. chroot)."
 
 msgid "Command '%{cmd}' failed: %{e}"
-msgstr ""
+msgstr "Command '%{cmd}' failed: %{e}"
 
 msgid "Component"
-msgstr ""
+msgstr "Component"
 
 msgid "Auto-detected by existence of"
-msgstr ""
+msgstr "Auto-detected by existence of"
 
 msgid "Destinations"
-msgstr ""
+msgstr "Destinations"
 
 msgid "Logging verbosity level setup"
-msgstr ""
+msgstr "Logging verbosity level setup"
