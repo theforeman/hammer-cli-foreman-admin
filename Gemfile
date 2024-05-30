@@ -5,7 +5,7 @@ gemspec
 gem 'gettext', '>= 3.1.3', '< 4.0.0'
 
 group :test do
-  gem 'rake', '~> 10.1.0'
+  gem 'rake'
 end
 
 gem 'theforeman-rubocop', '~> 0.1.0'
