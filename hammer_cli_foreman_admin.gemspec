@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = "hammer_cli_foreman_admin"
   s.authors = ["Lukas Zapletal"]
   s.email = "lzap+git@redhat.com"
-  s.licenses = ["GPL-3"]
+  s.licenses = ["GPL-3.0"]
   s.homepage = "https://github.com/theforeman/hammer-cli-foreman-admin"
   s.version = HammerCLIForemanAdmin.version.dup
   s.platform = Gem::Platform::RUBY
@@ -20,5 +20,7 @@ Gem::Specification.new do |s|
   ]
   s.require_paths = ["lib"]
 
-  s.add_dependency 'hammer_cli'
+  s.add_dependency 'hammer_cli', '~> 3.10', '< 4.0'
+
+  s.required_ruby_version = '>= 2.7', '< 4'
 end
