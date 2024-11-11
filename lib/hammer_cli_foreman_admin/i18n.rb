@@ -12,7 +12,7 @@ module HammerCLIForemanAdmin
       end
 
       def domain_name
-        'hammer-cli-foreman-admin'
+        'hammer_cli_foreman_admin'
       end
     end
 
