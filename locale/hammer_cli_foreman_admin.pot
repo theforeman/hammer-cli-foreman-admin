@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-foreman-admin package.
+# This file is distributed under the same license as the hammer_cli_foreman_admin package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman-admin 0.0.2\n"
+"Project-Id-Version: hammer_cli_foreman_admin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-09 08:38+0200\n"
-"PO-Revision-Date: 2016-06-09 08:38+0200\n"
+"POT-Creation-Date: 2024-11-11 18:56+0100\n"
+"PO-Revision-Date: 2024-11-11 18:56+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -58,18 +58,18 @@ msgstr ""
 msgid "Command '%{cmd}' failed: %{e}"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_admin/logging_command.rb:120
+#: ../lib/hammer_cli_foreman_admin/logging_command.rb:122
 msgid "Component"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_admin/logging_command.rb:121
+#: ../lib/hammer_cli_foreman_admin/logging_command.rb:123
 msgid "Auto-detected by existence of"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_admin/logging_command.rb:122
+#: ../lib/hammer_cli_foreman_admin/logging_command.rb:124
 msgid "Destinations"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_admin/logging_command.rb:138
+#: ../lib/hammer_cli_foreman_admin/logging_command.rb:140
 msgid "Logging verbosity level setup"
 msgstr ""
