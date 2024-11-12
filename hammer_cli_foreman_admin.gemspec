@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = "hammer_cli_foreman_admin"
   s.authors = ["Lukas Zapletal"]
   s.email = "lzap+git@redhat.com"
-  s.licenses = ["GPL-3.0"]
+  s.licenses = ["GPL-3.0-only"]
   s.homepage = "https://github.com/theforeman/hammer-cli-foreman-admin"
   s.version = HammerCLIForemanAdmin.version.dup
   s.platform = Gem::Platform::RUBY
